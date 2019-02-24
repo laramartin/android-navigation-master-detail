@@ -7,4 +7,7 @@
     <string name="feed_title">Feed</string>
     <string name="messages_title">Messages</string>
     <string name="profile_title">Profile</string>
+    <string name="account">Account</string>
+    <string name="notifications">Notifications</string>
+    <string name="settings">Settings</string>
 </resources>
