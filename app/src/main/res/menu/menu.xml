@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-            android:id="@+id/feed_fragment"
-            android:icon="@drawable/ic_question_answer_black_24dp"
-            android:title="@string/feed"/>
+        android:id="@+id/feed_fragment"
+        android:icon="@drawable/ic_question_answer_black_24dp"
+        android:title="@string/feed" />
 
     <item
-            android:id="@+id/messages_fragment"
-            android:icon="@drawable/ic_email_black_24dp"
-            android:title="@string/messages"/>
+        android:id="@+id/messages_fragment"
+        android:icon="@drawable/ic_email_black_24dp"
+        android:title="@string/messages" />
 
     <item
-            android:id="@+id/profile_fragment"
-            android:icon="@drawable/ic_person_black_24dp"
-            android:title="@string/profile"/>
+        android:id="@+id/profile_fragment"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/profile" />
 </menu>
