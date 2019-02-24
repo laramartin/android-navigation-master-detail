@@ -3,4 +3,6 @@
     <string name="feed">Feed</string>
     <string name="messages">Messages</string>
     <string name="profile">Profile</string>
+
+    <string name="feed_title">Feed</string>
 </resources>
