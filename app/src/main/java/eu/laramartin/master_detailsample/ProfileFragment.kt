@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 
 class ProfileFragment : Fragment() {
 
@@ -15,9 +16,25 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+        lateinit var view: View
 
+        val isTablet = context!!.resources.getBoolean(R.bool.isTablet)
+
+        when {
+            isTablet -> {
+                view = inflater.inflate(R.layout.fragment_profile_land, container, false)
+                displayMasterDetailLayout(view)
+            }
+            else -> {
+                view = inflater.inflate(R.layout.fragment_profile, container, false)
+                displaySingleLayout(view)
+            }
+        }
+
+        return view
+    }
+
+    private fun displaySingleLayout(view: View) {
         view.findViewById<TextView>(R.id.account_textview).setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.fragment_account)
         )
@@ -27,7 +44,22 @@ class ProfileFragment : Fragment() {
         view.findViewById<TextView>(R.id.settings_textview).setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.fragment_settings)
         )
+    }
 
-        return view
+    private fun displayMasterDetailLayout(view: View) {
+        val navHostFragment =
+            childFragmentManager.findFragmentById(R.id.profile_nav_container) as NavHostFragment
+
+        view.findViewById<TextView>(R.id.account_textview).setOnClickListener {
+            navHostFragment.navController.navigate(R.id.account_fragment)
+        }
+
+        view.findViewById<TextView>(R.id.notifications_textview).setOnClickListener {
+            navHostFragment.navController.navigate(R.id.notifications_fragment)
+        }
+
+        view.findViewById<TextView>(R.id.settings_textview).setOnClickListener {
+            navHostFragment.navController.navigate(R.id.settings_fragment)
+        }
     }
 }
