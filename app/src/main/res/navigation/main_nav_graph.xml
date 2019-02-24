@@ -19,5 +19,5 @@
             android:id="@+id/profile_fragment"
             android:name="eu.laramartin.master_detailsample.ProfileFragment"
             android:label="Profile"
-            tools:layout="@layout/fragment_profile"/>
+            tools:layout="@layout/fragment_profile_land"/>
 </navigation>
