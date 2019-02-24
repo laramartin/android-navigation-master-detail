@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph_profile.xml"
-    app:startDestination="@id/fragment_profile">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph_profile.xml"
+            app:startDestination="@id/fragment_profile">
 
     <fragment
-        android:id="@+id/fragment_profile"
-        android:name="eu.laramartin.master_detailsample.ProfileFragment"
-        android:label="Profile"
-        tools:layout="@layout/fragment_profile_land" />
+            android:id="@+id/fragment_profile"
+            android:name="eu.laramartin.master_detailsample.ProfileFragment"
+            android:label="Profile"
+            tools:layout="@layout/fragment_profile_land"/>
 
+    <fragment
+            android:id="@+id/account_fragment"
+            android:name="eu.laramartin.master_detailsample.AccountFragment"
+            android:label="fragment_account"
+            tools:layout="@layout/fragment_account"/>
+
+    <fragment
+            android:id="@+id/notifications_fragment"
+            android:name="eu.laramartin.master_detailsample.NotificationsFragment"
+            android:label="fragment_notifications"
+            tools:layout="@layout/fragment_notifications"/>
+
+    <fragment
+            android:id="@+id/settings_Fragment"
+            android:name="eu.laramartin.master_detailsample.SettingsFragment"
+            android:label="fragment_settings"
+            tools:layout="@layout/fragment_settings"/>
 </navigation>
