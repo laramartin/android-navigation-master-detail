@@ -10,14 +10,34 @@
             android:name="eu.laramartin.master_detailsample.FeedFragment"
             android:label="Feed"
             tools:layout="@layout/fragment_feed"/>
+
     <fragment
             android:id="@+id/messages_fragment"
             android:name="eu.laramartin.master_detailsample.MessagesFragment"
             android:label="Messages"
             tools:layout="@layout/fragment_messages"/>
+
     <fragment
             android:id="@+id/profile_fragment"
             android:name="eu.laramartin.master_detailsample.ProfileFragment"
             android:label="Profile"
             tools:layout="@layout/fragment_profile_land"/>
+
+    <fragment
+            android:id="@+id/fragment_account"
+            android:name="eu.laramartin.master_detailsample.AccountFragment"
+            android:label="@string/account"
+            tools:layout="@layout/fragment_account"/>
+
+    <fragment
+            android:id="@+id/fragment_notifications"
+            android:name="eu.laramartin.master_detailsample.NotificationsFragment"
+            android:label="@string/notifications"
+            tools:layout="@layout/fragment_notifications"/>
+
+    <fragment
+            android:id="@+id/fragment_settings"
+            android:name="eu.laramartin.master_detailsample.SettingsFragment"
+            android:label="@string/settings"
+            tools:layout="@layout/fragment_settings"/>
 </navigation>

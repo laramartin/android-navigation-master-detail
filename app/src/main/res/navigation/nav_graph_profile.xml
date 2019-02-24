@@ -9,23 +9,33 @@
             android:id="@+id/fragment_profile"
             android:name="eu.laramartin.master_detailsample.ProfileFragment"
             android:label="Profile"
-            tools:layout="@layout/fragment_profile_land"/>
+            tools:layout="@layout/fragment_profile">
+        <action
+                android:id="@+id/action_fragment_profile_to_fragment_settings"
+                app:destination="@id/fragment_settings"/>
+        <action
+                android:id="@+id/action_fragment_profile_to_fragment_account"
+                app:destination="@id/fragment_account"/>
+        <action
+                android:id="@+id/action_fragment_profile_to_fragment_notifications"
+                app:destination="@id/fragment_notifications"/>
+    </fragment>
 
     <fragment
-            android:id="@+id/account_fragment"
+            android:id="@+id/fragment_account"
             android:name="eu.laramartin.master_detailsample.AccountFragment"
-            android:label="fragment_account"
+            android:label="@string/account"
             tools:layout="@layout/fragment_account"/>
 
     <fragment
-            android:id="@+id/notifications_fragment"
+            android:id="@+id/fragment_notifications"
             android:name="eu.laramartin.master_detailsample.NotificationsFragment"
-            android:label="fragment_notifications"
+            android:label="@string/notifications"
             tools:layout="@layout/fragment_notifications"/>
 
     <fragment
-            android:id="@+id/settings_Fragment"
+            android:id="@+id/fragment_settings"
             android:name="eu.laramartin.master_detailsample.SettingsFragment"
-            android:label="fragment_settings"
+            android:label="@string/settings"
             tools:layout="@layout/fragment_settings"/>
 </navigation>

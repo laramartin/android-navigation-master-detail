@@ -3,14 +3,13 @@
     <string name="feed">Feed</string>
     <string name="messages">Messages</string>
     <string name="profile">Profile</string>
-
     <string name="feed_title">Feed</string>
     <string name="messages_title">Messages</string>
     <string name="profile_title">Profile</string>
     <string name="account">Account</string>
     <string name="notifications">Notifications</string>
     <string name="settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="account_title">Account</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="settings_title">Settings</string>
 </resources>
