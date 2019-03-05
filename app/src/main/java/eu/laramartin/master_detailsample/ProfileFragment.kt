@@ -36,13 +36,13 @@ class ProfileFragment : Fragment() {
 
     private fun displaySingleLayout(view: View) {
         view.findViewById<TextView>(R.id.account_textview).setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.fragment_account)
+            Navigation.createNavigateOnClickListener(R.id.action_profile_fragment_to_fragment_account)
         )
         view.findViewById<TextView>(R.id.notifications_textview).setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.fragment_notifications)
+            Navigation.createNavigateOnClickListener(R.id.action_profile_fragment_to_fragment_notifications)
         )
         view.findViewById<TextView>(R.id.settings_textview).setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.fragment_settings)
+            Navigation.createNavigateOnClickListener(R.id.action_profile_fragment_to_fragment_settings)
         )
     }
 
@@ -51,15 +51,15 @@ class ProfileFragment : Fragment() {
             childFragmentManager.findFragmentById(R.id.profile_nav_container) as NavHostFragment
 
         view.findViewById<TextView>(R.id.account_textview).setOnClickListener {
-            navHostFragment.navController.navigate(R.id.account_fragment)
+            navHostFragment.navController.navigate(R.id.fragment_account)
         }
 
         view.findViewById<TextView>(R.id.notifications_textview).setOnClickListener {
-            navHostFragment.navController.navigate(R.id.notifications_fragment)
+            navHostFragment.navController.navigate(R.id.fragment_notifications)
         }
 
         view.findViewById<TextView>(R.id.settings_textview).setOnClickListener {
-            navHostFragment.navController.navigate(R.id.settings_fragment)
+            navHostFragment.navController.navigate(R.id.fragment_settings)
         }
     }
 }

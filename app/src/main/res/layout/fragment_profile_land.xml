@@ -92,12 +92,11 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:defaultNavHost="true"
+            app:defaultNavHost="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/guideline"
             app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/nav_graph_profile"
-            tools:layout="@layout/fragment_account"/>
+            app:navGraph="@navigation/nav_graph_profile"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

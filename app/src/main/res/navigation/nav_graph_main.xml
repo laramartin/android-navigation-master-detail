@@ -21,7 +21,12 @@
             android:id="@+id/profile_fragment"
             android:name="eu.laramartin.master_detailsample.ProfileFragment"
             android:label="Profile"
-            tools:layout="@layout/fragment_profile_land"/>
+            tools:layout="@layout/fragment_profile">
+        <action android:id="@+id/action_profile_fragment_to_fragment_account" app:destination="@id/fragment_account"/>
+        <action android:id="@+id/action_profile_fragment_to_fragment_notifications"
+                app:destination="@id/fragment_notifications"/>
+        <action android:id="@+id/action_profile_fragment_to_fragment_settings" app:destination="@id/fragment_settings"/>
+    </fragment>
 
     <fragment
             android:id="@+id/fragment_account"
