@@ -3,6 +3,8 @@ package eu.laramartin.master_detailsample
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -24,12 +26,24 @@ class MainActivity : AppCompatActivity() {
 
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             supportActionBar!!.title = destination.label
-            when (destination.id){
+            when (destination.id) {
                 R.id.fragment_account,
                 R.id.fragment_settings,
-                R.id.fragment_notifications -> supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+                R.id.fragment_notifications -> {
+                    supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+                }
                 else -> supportActionBar!!.setDisplayHomeAsUpEnabled(false)
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                navHostFragment.navController.popBackStack()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
