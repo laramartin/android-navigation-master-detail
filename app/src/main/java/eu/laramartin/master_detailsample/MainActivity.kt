@@ -1,30 +1,27 @@
 package eu.laramartin.master_detailsample
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var navHostFragment: NavHostFragment
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.main_container) as NavHostFragment
+        navController = Navigation.findNavController(this, R.id.main_container)
 
         findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
-            .setupWithNavController(navController = navHostFragment.navController)
+            .setupWithNavController(navController = navController)
 
-        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             supportActionBar!!.title = destination.label
             when (destination.id) {
                 R.id.fragment_account,
@@ -40,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
-                navHostFragment.navController.popBackStack()
+                navController.popBackStack()
                 return true
             }
         }
